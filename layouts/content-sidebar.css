@@ -3,12 +3,6 @@ Theme Name: hockey
 Layout: Content-Sidebar
 */
 
-.content-area {
-	float: left;
-	margin-left: -380px;
-	padding-left: 380px;
-	width: 100%;
-}
 .site-main {
 	background-color: #ff0000;
 }
@@ -39,3 +33,35 @@ Layout: Content-Sidebar
 	margin: 0 auto;
 }
 	
+	
+@media screen and (min-width: 1160px)	{
+	.content-area {
+		float: left;
+		margin-left: -380px;
+		padding-left: 380px;
+		width: 100%;
+	}	
+//This will align the text content wto the right when page is wider then 1160px //
+	.entry-header,
+	.entry-content,
+	.entry-meta,
+	.entry-footer,
+	.tag-links,
+	.post-navigation,
+	.comments-area,
+	.paging-navigation {
+		margin-right: 0;
+	}
+	
+}
+
+//This function will align the content text to the middle of the page when screen is smaller then 1159px, subject to change //
+@media screen and (max-width: 1159px) {
+	.site-content .widget-area {
+		width: auto;
+		max-width: 800px;
+		float: none;
+		margin: 1em auto 0;
+	}
+
+}
