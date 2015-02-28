@@ -722,7 +722,7 @@ X.X Header
 --------------------------------------------------------------*/
 
 .site-branding {
-    padding: 6rem 0;
+    padding: 2rem 0;
     text-align: center;
     background: #2c86ba;
     background: hsl(202, 62%, 45%);
@@ -730,8 +730,8 @@ X.X Header
 
 .site-title {
     font-weight: 700;
-    font-size: 40px;
-    font-size: 4.5rem;
+    font-size: 32px;
+    font-size: 2em;
     text-transform: uppercase;
     line-height: normal;
     padding-bottom: 1rem;
@@ -739,12 +739,29 @@ X.X Header
 
 .site-description {
     font-weight: 100;
-    font-size: 20px;
-    font-size: 2rem;
+    font-size: 16px;
+    font-size: 1em;
 }
 
+.site-title a,
+.site-description { 
+    color: #fff;
+    color: hsl(0, 0%, 100%);
 
-
+	/* This media query will be used to keep the header responsive when compressing the screen*/
+@media screen and (max-width: 600px) {
+    .site-branding { padding: 0; }
+    
+    .title-box {
+        max-width: 100%;
+        margin: 0;
+        padding: 4rem;
+        border: none;
+    }
+}
+	
+	
+	
 
 /*--------------------------------------------------------------
 9.0 Widgets
