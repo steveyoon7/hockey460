@@ -270,7 +270,7 @@ button,
 input,
 select,
 textarea {
-	color: red;
+	color: #ffffff;
 	//* saturation, brightness etc *//
 	color: hsl(0, 0%, 25%) 
 	font-family: 'Slabo 27px', serif;
@@ -314,7 +314,7 @@ address {
 }
 
 pre {
-	background: #eee;
+	background: #eeeeee;
 	font-family: "Courier 10 Pitch", Courier, monospace;
 	font-size: 15px;
 	font-size: 0.9375rem;
