@@ -34,14 +34,14 @@ Layout: Content-Sidebar
 }
 	
 	
-@media screen and (min-width: 1160px)	{
+@media screen and (min-width: 790px)	{
 	.content-area {
 		float: left;
 		margin-left: -380px;
 		padding-left: 380px;
 		width: 100%;
 	}	
-//This will align the text content wto the right when page is wider then 1160px //
+//This will align the text content to the right when page is wider then 790px //
 	.entry-header,
 	.entry-content,
 	.entry-meta,
@@ -55,8 +55,8 @@ Layout: Content-Sidebar
 	
 }
 
-//This function will align the content text to the middle of the page when screen is smaller then 1159px, subject to change //
-@media screen and (max-width: 1159px) {
+//This function will align the content text to the middle of the page when screen is smaller then 789px, subject to change //
+@media screen and (max-width: 789px) {
 	.site-content .widget-area {
 		width: auto;
 		max-width: 800px;
