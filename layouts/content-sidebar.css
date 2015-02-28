@@ -62,6 +62,7 @@ Layout: Content-Sidebar
 		max-width: 800px;
 		float: none;
 		margin: 1em auto 0;
+		padding: 0;
 	}
 
 }
