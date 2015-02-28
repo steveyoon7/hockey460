@@ -722,7 +722,7 @@ X.X Header
 --------------------------------------------------------------*/
 
 .site-branding {
-    padding: 2.5rem 0;
+    padding: 6rem 0;
     text-align: center;
     background: #2c86ba;
     background: hsl(202, 62%, 45%);
@@ -730,8 +730,8 @@ X.X Header
 
 .site-title {
     font-weight: 700;
-    font-size: 32px;
-    font-size: 2rem;
+    font-size: 40px;
+    font-size: 4.5rem;
     text-transform: uppercase;
     line-height: normal;
     padding-bottom: 1rem;
@@ -739,8 +739,8 @@ X.X Header
 
 .site-description {
     font-weight: 100;
-    font-size: 16px;
-    font-size: 1rem;
+    font-size: 20px;
+    font-size: 2rem;
 }
 
 .site-title a,
