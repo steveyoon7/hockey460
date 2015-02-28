@@ -106,6 +106,9 @@ add_action( 'widgets_init', 'hockey_widgets_init' );
 function hockey_scripts() {
 	wp_enqueue_style( 'hockey-style', get_stylesheet_uri() );
 	
+	//adding stylesheet for the sidebar //
+	wp_enqueue_style( 'hockey-content-sidebar', get_template_director_uri() . '/layouts/content-sidebar.css');
+	//adding fonts from google-fonts to the theme //
 	wp_enqueue_style( 'hockey-style-google-fonts','http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic|Abril+Fatface');
 
 	wp_enqueue_style( 'hockey-style-fontawesome', 'http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
