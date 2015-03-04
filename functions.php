@@ -39,7 +39,7 @@ function hockey_setup() {
 	 * hard-coded <title> tag in the document head, and expect WordPress to
 	 * provide it for us.
 	 */
-	add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'title-tag' );
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
@@ -58,11 +58,7 @@ function hockey_setup() {
 	 * to output valid HTML5.
 	 */
 	add_theme_support( 'html5', array(
-		'search-form', 
-		'comment-form', 
-		'comment-list', 
-		'gallery',
-		'caption',
+		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
 	) );
 
 	/*
@@ -74,10 +70,10 @@ function hockey_setup() {
 	) );
 
 	// Set up the WordPress core custom background feature.
-	// add_theme_support( 'custom-background', apply_filters( 'hockey_custom_background_args', array(
-// 		'default-color' => 'ffffff',
-// 		'default-image' => '',
-//	) ) );
+	add_theme_support( 'custom-background', apply_filters( 'hockey_custom_background_args', array(
+		'default-color' => 'ffffff',
+		'default-image' => '',
+	) ) );
 }
 endif; // hockey_setup
 add_action( 'after_setup_theme', 'hockey_setup' );
@@ -101,20 +97,11 @@ function hockey_widgets_init() {
 add_action( 'widgets_init', 'hockey_widgets_init' );
 
 /**
- * Enqueue scripts and styles.
+ * Enqueue scripts and styles. js refers to any java script files that needed for styling
  */
 function hockey_scripts() {
 	wp_enqueue_style( 'hockey-style', get_stylesheet_uri() );
-	
-	//adding stylesheet for the sidebar //
-	
-	wp_enqueue_style( 'hockey-content-sidebar', get_template_directory_uri() . '/layouts/content-sidebar.css');
-	
-	//adding fonts from google-fonts to the theme //
-	wp_enqueue_style( 'hockey-style-google-fonts','http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic|Abril+Fatface');
 
-	wp_enqueue_style( 'hockey-style-fontawesome', 'http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
-	
 	wp_enqueue_script( 'hockey-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'hockey-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
@@ -128,7 +115,7 @@ add_action( 'wp_enqueue_scripts', 'hockey_scripts' );
 /**
  * Implement the Custom Header feature.
  */
-require get_template_directory() . '/inc/custom-header.php';
+//require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
