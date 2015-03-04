@@ -722,16 +722,31 @@ X.X Header
 --------------------------------------------------------------*/
 
 .site-branding {
-    padding: 6rem 0;
+	padding: 6rem 0;
     text-align: center;
     background: #2c86ba;
     background: hsl(202, 62%, 45%);
 }
 
 .site-title {
+<<<<<<< Updated upstream
     font-weight: 700;
+<<<<<<< Updated upstream
     font-size: 40px;
     font-size: 4.5rem;
+=======
+    font-size: 32px;
+<<<<<<< Updated upstream
+    font-size: 2rem;
+=======
+    font-size: 2em;
+=======
+    font-weight: 500;
+    font-size: 40px;
+    font-size: 4.5rem;
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
     text-transform: uppercase;
     line-height: normal;
     padding-bottom: 1rem;
