@@ -1,11 +1,14 @@
+
+
 <?php
 /**
  * @package hockey
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>
 	<header class="entry-header">
+	
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
 		<div class="entry-meta">
@@ -24,6 +27,21 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php hockey_entry_footer(); ?>
+	
+
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+

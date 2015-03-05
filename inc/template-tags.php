@@ -18,7 +18,7 @@ function the_posts_navigation() {
 	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
 		return;
 	}
-	?>
+?>
 	<nav class="navigation posts-navigation" role="navigation">
 		<h2 class="screen-reader-text"><?php _e( 'Posts navigation', 'hockey' ); ?></h2>
 		<div class="nav-links">
@@ -264,3 +264,32 @@ function hockey_category_transient_flusher() {
 }
 add_action( 'edit_category', 'hockey_category_transient_flusher' );
 add_action( 'save_post',     'hockey_category_transient_flusher' );
+
+
+/*
+ * Social media icon menu reviewed from http://justintadlock.com/archives/2013/08/14/social-nav-menus-part-2
+ */
+
+/* If theres a menu called social in the theme, output the nav menu. The above arrays lists the conditionals that wil be activated */
+
+function hockey_social_menu() {
+    if ( has_nav_menu( 'social' ) ) {
+	wp_nav_menu(
+		array(
+			'theme_location'  => 'social',
+			'container'       => 'div',
+			'container_id'    => 'menu-social',
+			'container_class' => 'menu-social',
+			'menu_id'         => 'menu-social-items',
+			'menu_class'      => 'menu-items',
+			'depth'           => 1,
+			
+		/*	What this will do is hide the text and only show the social media icon */
+			'link_before'     => '<span class="screen-reader-text">',
+			'link after'      => '</span>',
+			'fallback_cb'     => '',
+		)
+	);
+    }
+}
+

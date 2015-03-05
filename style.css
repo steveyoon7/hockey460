@@ -11,6 +11,7 @@ Text Domain: hockey
 Tags:
 
 This theme, like WordPress, is licensed under the GPL.
+
 Use it to make something cool, have fun, and share what you've learned with others.
 
 hockey is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
@@ -32,7 +33,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 6.0 Accessibility
 7.0 Alignments
 8.0 Clearings
-9.0 Widgets
+9.0 
 10.0 Content
 	10.1 Posts and pages
 	10.2 Asides
@@ -265,33 +266,52 @@ th {
 /*--------------------------------------------------------------
 2.0 Typography
 --------------------------------------------------------------*/
+
 body,
+textarea {
+	color: #000;
+	font-family: 'Crimson Text', sans-serif;
+	font-size: 14px;
+	font-size: 1.4rem;
+	}
+
+
+
+
 button,
 input,
 select,
-textarea {
-	color: #ffffff;
-	//* saturation, brightness etc *//
+ {
+	color: #FFFFFF;
+	/* saturation, brightness etc */
 	color: hsl(0, 0%, 25%) 
-	font-family: 'Slabo 27px', serif;
-	font-size: 16px;
-	font-size: 1rem;
+	font-family: 'Crete Round', serif;
+	font-size: 8px;
+	font-size: 0.8rem;
 	line-height: 1.5;
+	text-align: center;
+	float: left;
 }
 
 h1,
-h2,
 h3,
 h4,
 h5,
 h6 
 {
 	clear: right;
-	font-weight: 900;
-	font-family: 'Arimo', sans-serif;
-	color: blue;
-	color: hsl(0, 0%, 0%);
-	
+	font-weight: 400;
+	font-family: 'Crimson Text', sans-serif;
+	color: #000000;
+	font-size: 30px;
+}
+
+h2
+	{
+	clear: right;
+	font-weight: 600;
+	font-family: 'Crimson Text', sans-serif;
+	color: #FFFFFF;
 }
 
 p {
@@ -503,17 +523,17 @@ textarea {
 5.1 Links
 --------------------------------------------------------------*/
 a {
-	color: royalblue;
+	color: #000;
 }
 
 a:visited {
-	color: purple;
+	color: #000;
 }
 
 a:hover,
 a:focus,
 a:active {
-	color: midnightblue;
+	color: #FF0000;
 }
 
 a:focus {
@@ -529,10 +549,14 @@ a:active {
 5.2 Menus
 --------------------------------------------------------------*/
 .main-navigation {
-	clear: both;
-	display: block;
-	float: left;
-	width: 100%;
+    position: relative;
+    float: left;
+    width: 100%;
+    display: block;
+    clear: both;
+    font-family: 'Crete Round', sans-serif;      
+    text-transform: uppercase;
+    background: #000000;
 }
 
 .main-navigation ul {
@@ -547,18 +571,17 @@ a:active {
 }
 
 .main-navigation a {
-	display: block;
-	text-decoration: none;
+    display: block;
+    padding: 1.1em 1em;
+    font-size: 10px;
+    font-size: 1.0rem;
+    text-decoration: none;
+    line-height: 1.3em;
+    color: #FFF;
 }
 
-.main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: left;
-	position: absolute;
-	top: 1.5em;
-	left: -999em;
-	z-index: 99999;
-}
+
+
 
 .main-navigation ul ul ul {
 	left: -999em;
@@ -574,6 +597,8 @@ a:active {
 }
 
 .main-navigation li:hover > a {
+    color: #fff;
+    background: #CC0000;
 }
 
 .main-navigation ul ul :hover > a {
@@ -582,34 +607,192 @@ a:active {
 .main-navigation ul ul a:hover {
 }
 
-.main-navigation ul li:hover > ul {
-	left: auto;
-}
-
 .main-navigation ul ul li:hover > ul {
-	left: 100%;
+	display: block;
 }
+/*This indicates with the color selected that the user is on that specific page*/
+
 
 .main-navigation .current_page_item > a,
 .main-navigation .current-menu-item > a,
-.main-navigation .current_page_ancestor > a {
+.main-navigation .current_page_item > a:hover,
+.main-navigation .current-menu-item > a:hover {
+    background: white;
+    color: #000000;
 }
+
+.main-navigation .current_page_ancestor {
+    background: #4d4d4d;
+}
+
+.main-navigation ul ul .current_page_parent,
+.main-navigation .current_page_parent .current_page_item > a {
+    color: #fff;
+    background: #313131;
+} 
+
+
+
 
 /* Small menu. */
 .menu-toggle {
 	display: none;
+	cursor: pointer;
 }
 
+
+/* This will create a short menu button to adapt to different screen sizes. This shrinks the menu from the tabs when fullscreen to a button to save space. This will also created a drop down menu to fit according to the screen size */
+
 @media screen and (max-width: 600px) {
-	.menu-toggle,
+	.menu-toggle {
+            display: block;
+            font-weight: normal;
+            font-size: 14px;
+            font-size: 1.4rem;
+	    font-family:'Crete Round', sans-serif;
+            line-height: 2.0em;
+            margin-left:60px;
+            margin-top:60px;
+            padding: 0 1 em;
+            margin-bottom: 16px;
+            background-color: #a10000;
+            color: white;
+            float:center;
+            
+	}
+        
 	.main-navigation.toggled .nav-menu {
 		display: block;
+		border-top: 1px solid;
+		border-top-color: #fff;
+		border-top-color: hsla(0, 0%, 100%, .5);
+		
 	}
 
 	.main-navigation ul {
-		display: none;
+            display: none;
+            padding-left: 0;
+	}
+	
+	.main-navigation li { 
+		float: none; 
+	}
+
+	.main-navigation li a { 
+		padding: 1.3em 2em; 
+	}
+
+	.main-navigation li li a { 
+		padding-left: 4em; 
+	}
+
+	.main-navigation li li li a { 
+		padding-left: 6em; 
+	}
+
+	.main-navigation li:hover > a {
+		background: #313131;
+		background: hsl(0, 0%, 19%);
+	}
+	
+	.main-navigation ul ul,
+	.main-navigation ul ul ul {
+		position: relative;
+		top: inherit;
+		left: 0;
+		display: block;
+		float: none;
+		background: #313131;
+		background: hsl(0, 0%, 19%);
+	}
+	
+	.main-navigation ul ul a { width: 100%; }
+
+	.main-navigation ul a:hover,
+	.main-navigation ul ul a:hover {
+		background: #4d4d4d;
+		background: hsl(0, 0%, 30%);
+	}
+
+	.main-navigation .current_page_ancestor { background: inherit; }
+
+	.main-navigation ul ul .current_page_parent {
+		color: inherit;
+		background: inherit;
+	}
+
+	.main-navigation .current_page_item > a,
+	.main-navigation .current_page_item > a:hover,
+	.main-navigation .current_page_item li:hover,
+	.main-navigation .current_page_parent .current_page_item > a  {
+		color: #fff;
+		color: hsl(0, 0%, 100%);
+		background: #4d4d4d;
+		background: hsl(0, 0%, 30%);    
 	}
 }
+
+/* Social Media Menu */
+
+/* This styling will push the social media menu to the right */
+
+
+.menu-social ul {
+    float: right;
+    text-align: center;
+    list-style: none;    
+}
+
+.menu-social ul li {
+    position: relative;
+    display:  inline-block;    
+}
+
+/* This will find the link items in the social media menu and place the content before the item */
+
+.menu-social li a:before {
+    display: inline-block;
+    padding: 0 5px;
+    vertical-align: top;
+    font-family: 'Fontawesome';
+    font-size: 20px;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    content: '\f0c0';
+}
+
+/* Custom type rule set below have a custom targetting href device, targeting the icons to the respective social menu link */
+
+.menu-social li a[href*="facebook.com"]::before { content: '\f09a'; }
+
+.menu-social li a[href*="twitter.com"]::before { content: '\f099'; }
+
+.menu-social li a[href*="instagram.com"]::before { content: '\f16d'; }
+
+/* The purpuse of this media query is to prevent the social media bar from disapearing upon shriking the page at breaking point. This will move up the social media icons above the menu button to conform and create an organized and easy to find social menu */
+
+@media screen and (max-width: 600px) {
+    #menu-social ul {
+	position: absolute;
+        top: 0;
+        right: 6rem;
+        display: block;
+        
+    }
+    
+    #menu-social li a { 
+        padding:1em .5em .5em .5em;
+        margin-top: .5em;
+        
+    }
+    
+    #menu-social li:hover > a {
+    background: #cc0000;
+    border-bottom-color: #FFF;
+    }
+    
+}
+
 
 .site-main .comment-navigation,
 .site-main .posts-navigation,
@@ -718,35 +901,28 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-X.X Header
+\ 8.5 Header
 --------------------------------------------------------------*/
 
+.header-image img {
+	display: block;
+	margin: 0 auto;
+	width: 100%;
+	height: 50%;
+	margin bottom: -70px;
+}
+
+
 .site-branding {
-	padding: 6rem 0;
+	padding: 1rem 0;
     text-align: center;
-    background: #2c86ba;
-    background: hsl(202, 62%, 45%);
+    background: #000000;
 }
 
 .site-title {
-<<<<<<< Updated upstream
     font-weight: 700;
-<<<<<<< Updated upstream
     font-size: 40px;
     font-size: 4.5rem;
-=======
-    font-size: 32px;
-<<<<<<< Updated upstream
-    font-size: 2rem;
-=======
-    font-size: 2em;
-=======
-    font-weight: 500;
-    font-size: 40px;
-    font-size: 4.5rem;
->>>>>>> Stashed changes
->>>>>>> Stashed changes
->>>>>>> Stashed changes
     text-transform: uppercase;
     line-height: normal;
     padding-bottom: 1rem;
@@ -761,9 +937,84 @@ X.X Header
 .site-title a,
 .site-description { 
     color: #fff;
-    color: hsl(0, 0%, 100%);
+}
+ 
+/* Header Search */ 
 
-	/* This media query will be used to keep the header responsive when compressing the screen*/
+.search-toggle {
+    float: right;
+    width: 54px;
+    height: 56px;
+    padding-top:13px;
+    margin-right: 20px;
+    color: #CC0000;
+    text-align: center;
+    cursor: pointer;
+}
+
+.search-toggle:hover,
+.search-toggle.active {
+    background: #fff;
+}
+
+/* This media query will enable the search fucntion to be responsive when compressing the screen under 600px. */
+
+
+ screen and (max-width: 600px) {
+    .search-toggle {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-right: 0;
+    }
+}
+
+
+input[type="search"] {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* This set the search form to 100%, to expand it across the page*/
+
+.search-box-wrapper {
+    z-index: 2;
+    width: 100%;
+    display: none;
+}
+
+.search-box {
+    padding: 0 1em 1em 0;
+    background:#2D2E2B;
+    
+}
+
+.search-box .search-field {
+    max-width: 220px;
+    float: right;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    font-size: 10px;
+    font-size: 1rem;
+    background-color: #fff;
+    border: 0;
+}
+
+/* This enables an error message upon a false search */
+
+.error404 .search-submit,
+.search .search-submit,
+.search-box .search-submit { 
+    display: none; 
+}
+
+
+
+
+
+
+/* This media query will be used to keep the header responsive when compressing the screen. This changes the bahaviour of the site and title-box. These paramaerters defines how the banner or header will look when the screen is compressed under 600px */
+	
 @media screen and (max-width: 600px) {
     .site-branding { padding: 0; }
     
@@ -774,16 +1025,84 @@ X.X Header
         border: none;
     }
 }
-	
-	
-	
+
+
 
 /*--------------------------------------------------------------
 9.0 Widgets
 --------------------------------------------------------------*/
 .widget {
-	margin: 0 0 1.5em;
+	margin: 0 0 4em;
+	font-family: 'Crimson Text', sans-serif;
+	font-size: 10px;
+	font-size: 1.0rem;
+	background: hsl(0, 96%, 21%);
+	padding: 1em 1em 1em 1em;
+	border-style: solid;
+    	border-width: 4px;
+    	border-color: black;
+    	color: #FFF;
+    	text-align: left;
+    	
 }
+
+.widget-title {
+	margin-bottom: 1em;
+	font-size: 18px;
+	font-size: 1.8rem;
+	border-bottom: 2px solid #000;
+	text-align: center;
+	
+}
+
+
+.widget a {
+	font-weight: 800;
+	color: #FFF;
+}
+
+
+
+.widget ul,
+.widget ol {
+    padding: 0;
+    margin: -1em 0 0;
+    list-style-type: none;
+}
+
+.widget li { padding: 1em 0 0; }
+
+.widget li ul,
+.widget li ol { margin-top: 0; }
+
+.widget li li { margin-left: 1.5em; }
+
+/* This registers the icons for the sidebar widgets */
+
+.widget_recent_entries li:before,
+.widget_recent_comments li:before,
+.widget_pages li:before {
+    display: block;
+    float: left;
+    padding-top: 2px;
+    margin-left: -2.5em;
+    font-family: 'fontawesome';
+    font-size: 14px;
+    font-size: 1.4rem;
+} 
+
+.widget_recent_entries li,
+.widget_recent_comments li { margin: 0 0 .5em 3.5em; }
+
+.widget_recent_entries li:before { content: "\f0a9"; }
+
+.widget_recent_comments li:before { content: "\f0a9"; }
+
+.widget_pages li { margin: 0 0 0 3.5em; }
+
+.widget_pages li:before { content: "\f0a9"; }
+
+
 
 /* Make sure select elements fit in widgets. */
 .widget select {
@@ -795,9 +1114,48 @@ X.X Header
 	display: none;
 }
 
+
+/* Styling footer widgets */
+
+
+
+.footer-widgets {
+	 margin: 0 auto;
+ }
+
+.footer-widgets .widget-title,
+.footer-widgets .widget a:hover {
+    color: #fff;
+    border-color: #000;
+    
+}
+
+.footer-widgets .widget {
+    float: none;
+    width: 320px;
+    margin: 0 2em 2em 2em;
+}
+
+/* Footer widgets become responsive when shrinking the screen at 915px where the page break was determined to be found. This will conform the widget to fit on the page without any spaces on the sides. This will line up the widgets accordignly. Enable 100% to fit full screen and float none to center the content upon shrinking   */
+
+@media screen and (max-width: 915px) {
+    #footer-widgets { width: 100%!important; }
+    
+    .footer-widgets .widget {
+        float: none;
+        width: 100%;
+        margin: 0 0 2em -1.5em;
+    }
+}
+
+
+
 /*--------------------------------------------------------------
 10.0 Content
 --------------------------------------------------------------*/
+
+
+
 /*--------------------------------------------------------------
 10.1 Posts and pages
 --------------------------------------------------------------*/
@@ -828,6 +1186,11 @@ X.X Header
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+}
+
+.comment-respond {
+
+
 }
 
 /*--------------------------------------------------------------
@@ -883,7 +1246,35 @@ object {
 }
 
 /*--------------------------------------------------------------
-12.1 Captions
+12.1 Footer
+--------------------------------------------------------------*/
+
+
+.site-footer {
+	padding: 1em;
+	font-family: 'Crimson Text', sans-serif;
+	font-size: 10px;
+	font-size: 1.0rem;
+	color: #fff;
+	background: #000000;
+	padding-left: 4em;
+	padding-up: 4em;	
+	}
+
+.site-footer a { 	
+	color: #fff;
+	color: hal (0, 0%, 100%);
+	}
+.site-info { 
+	text-align: center;
+	padding-right: 4em;
+	}
+
+
+
+
+/*--------------------------------------------------------------
+12.2 Captions
 --------------------------------------------------------------*/
 .wp-caption {
 	margin-bottom: 1.5em;
@@ -904,7 +1295,7 @@ object {
 }
 
 /*--------------------------------------------------------------
-12.2 Galleries
+12.3 Galleries
 --------------------------------------------------------------*/
 .gallery {
 	margin-bottom: 1.5em;

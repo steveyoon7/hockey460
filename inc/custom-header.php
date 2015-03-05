@@ -22,13 +22,16 @@
  * @uses hockey_admin_header_style()
  * @uses hockey_admin_header_image()
  */
+ 
+ /* This is where you set up the cusomt header feature, the variables allow us to set a default image with for its various sizes. The flex-height if set to false will restrict the image height to 300 so the header does not over take the content that follows. */
+ 
 function hockey_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'hockey_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
-		'width'                  => 1000,
-		'height'                 => 250,
-		'flex-height'            => true,
+		'width'                  => 1280,
+		'height'                 => 300,
+		'flex-height'            => false,     /* If true, when inserting a larger image, this would push down all the content */
 		'wp-head-callback'       => 'hockey_header_style',
 		'admin-head-callback'    => 'hockey_admin_header_style',
 		'admin-preview-callback' => 'hockey_admin_header_image',
@@ -58,8 +61,7 @@ function hockey_header_style() {
 		// Has the text been hidden?
 		if ( 'blank' == $header_text_color ) :
 	?>
-		.site-title,
-		.site-description {
+		.site-branding {
 			position: absolute;
 			clip: rect(1px, 1px, 1px, 1px);
 		}

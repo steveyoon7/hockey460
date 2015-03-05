@@ -5,9 +5,14 @@
  * Contains the closing of the #content div and all content after
  *
  * @package hockey
+ 
+ The i class function will allow the copyrifght logo to be shown on the theme beside Official team muck text in the footer section. The get_sidebar functions shows the intended footer wdiget on the theme as selected in the WordPress dashboaord.
+ 
  */
+ 
+ 
+ 
 ?>
-	<!-- This calls the function for the sidebar footer --!>
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
@@ -16,7 +21,6 @@
 			
 			
 		<i class="fa fa-copyright"></i>
-	<!-- at the bottom of the page, it will display this description as an indicator of the site--!>
 		<?php printf( __( 'The Offical Fan Site of Team Muck', 'hockey' ), 'Team Muck' ); ?>
 			
 </div><!-- .site-info -->

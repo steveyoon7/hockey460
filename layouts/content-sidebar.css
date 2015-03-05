@@ -3,20 +3,79 @@ Theme Name: hockey
 Layout: Content-Sidebar
 */
 
-.content-area {
-	float: left;
-	margin: 0 -25% 0 0;
-	width: 100%;
-}
 .site-main {
-	margin: 0 25% 0 0;
+	padding-top: 30px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 .site-content .widget-area {
+	width: 380px;
 	float: right;
-	overflow: hidden;
-	width: 25%;
+	padding: 4rem;
+	padding-bottom: .2rem;
+	background-color: #C0C0C0;
 }
+
+
 .site-footer {
 	clear: both;
 	width: 100%;
 }
+
+
+
+.entry-header,
+.entry-content,
+.entry-meta,
+.entry-footer,
+.tag-links,
+.post-navigation,
+.comments-area,
+.paging-navigation {
+	position: relative;
+	max-width: 780px;
+	max-width: 78rem;
+	padding: 0 4rem;
+	margin: 0 auto;
+}
+	
+
+/* This media query is initialized only when the screen is at 810px or wider. This rule set for the sidebar will only apply when the screen is above the 810px. When the screen is big enough the content will have a margin right of 0, which will align to the right of the page */
+
+@media screen and (min-width: 810px)	{
+	.content-area {
+		float: left;
+		margin-left: -380px;
+		padding-left: 380px;
+		width: 100%;
+	}	
+		
+	.entry-header,
+	.entry-content,
+	.entry-meta,
+	.entry-footer,
+	.tag-links,
+	.post-navigation,
+	.comments-area,
+	.paging-navigation {
+		margin-right: 0;
+	}
+	
+}
+
+/*this section will force the sidebar to be centered below content area @ 810px. After this point on any screen, the content should fit accordingly to create responsive content */
+
+@media screen and (max-width: 809px) {
+	.site-content .widget-area {
+		width: auto;
+		max-width: 800px;
+		float: none;
+		margin: 1em auto 0;
+	}
+}
+
+
+
+
+
+
